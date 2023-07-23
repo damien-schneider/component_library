@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.parent {
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-rows: 33.333% 33.333% 33.333%;
+}
+
+.parent:has(:nth-child(3n + 1):hover) {
+  grid-template-columns: 50% 25% 25%;
+}
+.parent:has(:nth-child(3n + 2):hover) {
+  grid-template-columns: 25% 50% 25%;
+}
+.parent:has(:nth-child(3n):hover) {
+  grid-template-columns: 25% 25% 50%;
+}
+
+div:has(.row-1:hover) {
+  grid-template-rows: 50% 25% 25%;
+}
+div:has(.row-2:hover) {
+  grid-template-rows: 25% 50% 25%;
+}
+div:has(.row-3:hover) {
+  grid-template-rows: 25% 25% 50%;
+}
+
+* {
+  @apply transition-all;
+}
